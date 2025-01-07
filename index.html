@@ -149,99 +149,157 @@
                 </div>
             </section>
             <!-- End of What's On section -->
+        
             <!-- Start of Plan Your Visit section -->
-            <section
-            id="planVisit"
-            class="py-8 bg-gray-100 border-t border-b border-gray-600">
+            <section id="planVisit" class="py-8 bg-gray-100 border-t border-b border-gray-600 px-20">
             <div class="max-w-6xl mx-auto grid grid-cols-12 gab-6">
-                <div class="col-span-4">
-                    <h2 class="text-4xl font-bold">Plan Your Visit</h2>
+                <!--Headline-->
+                <div class="col-span-12 lg:col-span-4 text-center lg:text-left mb-6">
+                    <h2 class="text-3xl lg:text-4xl font-bold">Plan Your Visit</h2>
                 </div>
-                <div class="col-span-8">
-                    <!-- Accordion -->
-                    <div>
-                        <!-- Accordion item -->
-                        <div class="border">
+                <!--Accordion Container-->
+                <div class="col-span-12 lg:col-span-8 flex flex-col items-center lg:items-start space-y-4 w-full">
+                    <!-- Accordion Item Access-->
+                        <div class="border bg-white border-black shadow-md transition-transform duration-300 hover:shadow-xl hover:scale-105 w-full">
+                            <!-- Accordion button -->
                             <button
-                                class="w-full text-left px-6 py-2 hover:text-black hover:font-bold"
-                                onclick="toggleAccordion('access')">
-                                Access
+                                class="w-full text-left px-6 py-2 flex justify-between items-center text-xl hover:text-black hover:font-bold"
+                                onclick="toggleAccordion('access', this)">
+                                <span class="accordion-text">Access</span>
+                                <span class="accordion-icon text-orange-500">+</span>
                             </button>
-                            <div
-                                id="access"
-                                class="py-4 px-6 hidden accordion-content">
-                                <h3>Address</h3>
-                                <p>
-                                    Vivid Visions
-                                    <br />
-                                    123 Creative Avenue, Art District,
-                                    Metropolis, 56789
-                                </p>
-                                <h3>How to Get Here</h3>
-                                <h4>By Public Transport</h4>
-                                <p>
-                                    Metro: Take the Blue Line to Creative
-                                    Square Station (5-minute walk to the
-                                    gallery).
-                                </p>
-                                <p>
-                                    Bus: Routes 21, 45, and 89 stop at Art
-                                    District North.
-                                </p>
-                                <p>
-                                    Train: The nearest station is Metropolis
-                                    Central, connected via Metro or a
-                                    10-minute taxi ride.
-                                </p>
-                                <h4>By Car</h4>
-                                <p>
-                                    From Downtown: Head east on Main Street,
-                                    turn right onto Creative Avenue. The
-                                    gallery is on the left side after 2
-                                    blocks.
-                                </p>
-                                <p>
-                                    From the Highway: Take Exit 23 towards
-                                    Art District, follow the signs to
-                                    Creative Avenue.
-                                </p>
+                            <!-- Accordion Content -->
+                            <div id="access" class="py-8 px-6 hidden accordion-content">
+                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                    <!-- Left Column -->
+                                    <div class="space-y-6">
+                                        <!-- How to Get Here Section -->
+                                        <div>
+                                            <!-- Public Transport -->
+                                            <div class="mb-4">
+                                                <h3 class="font-semibold mb-3">By Public Transport</h3>
+                                                <ul class="border-l-4 border-orange-500 px-5">
+                                                    <li><span class="font-semibold">Metro:</span> Blue Line to Creative Square Station (5-minute walk).</li>
+                                                    <li><span class="font-semibold">Bus:</span> Routes 21, 45, and 89 stop at Art District North.</li>
+                                                    <li><span class="font-semibold">Train:</span> Metropolis Central Station, 10-minute taxi ride.</li>
+                                                </ul>
+                                            </div>
+                                            <!-- By Car -->
+                                            <div class="mb-4">
+                                                <h3 class="font-semibold mb-3">By Car</h3>
+                                                <ul class="border-l-4 border-orange-500 px-5">
+                                                    <li><span class="font-semibold">From Downtown:</span> Head east on Main Street, turn right onto Creative Avenue. The gallery is on the left after 2 blocks.</li>
+                                                    <li><span class="font-semibold">From the Highway:</span> Take Exit 23 towards Art District, follow signs to Creative Avenue.</li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- Right Column -->
+                                    <div class="space-y-6">
+                                        <!-- Address Section -->
+                                        <h3 class="font-semibold mb-3">Address</h3>
+                                            <ul class="border-l-4 border-orange-500 px-5">
+                                                <li>Vivid Visions</li>
+                                                <li>123 Creative Avenue, Art District</li>
+                                                <li>Metropolis, 56789</li>
+                                            </ul>
+                            
+                                        <!-- Google Maps -->
+                                        <div class="shadow-lg overflow-hidden">
+                                            <iframe
+                                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d243647.2214897604!2d-74.00601542858613!3d40.71277531542981!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a3177a5b3d9%3A0x2b4fba9a2ed998fa!2sCreative%20Square!5e0!3m2!1sen!2sus!4v1677525476375!5m2!1sen!2sus"
+                                                width="100%"
+                                                height="350"
+                                                style="border:0;"
+                                                allowfullscreen=""
+                                                loading="lazy"
+                                                referrerpolicy="no-referrer-when-downgrade"
+                                            ></iframe>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- end Accordion Content -->
+                            
+                        </div>
+                        <!-- Accordion item Opening Hours -->
+                        <div class="border bg-white border-black shadow-md transition-transform duration-300 hover:shadow-xl hover:scale-105 w-full">
+                            <button  
+                            class="w-full text-left text-xl px-6 py-2 flex justify-between items-center hover:text-black hover:font-bold"
+                            onclick="toggleAccordion('opening-hours', this)">
+                            <span>Opening Hours</span>
+                            <span class="accordion-icon text-orange-500">+</span>
+                        </button>
+                        <!-- Accordion Content Opeing Hours -->
+                            <div id="opening-hours" class="py-4 px-6 hidden accordion-content">
+                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+
+                                    <div class="space-y-6">
+                                    <h3 class="font-semibold mb-3">Regular Hours</h3>
+                                    <ul class="border-l-4 border-orange-500 px-5">
+                                        <li><span class="font-semibold">Monday to Friday:</span> 10:00 AM – 6:00 PM</li>
+                                        <li><span class="font-semibold">Saturday and Sunday: </span>12:00 PM – 8:00 PM</li>
+                                    </ul>
+                                    </div>
+                                    <div class="space-y-6">
+                                        <h3 class="font-semibold mb-3">Special Hours</h3>
+                                        <ul class="border-l-4 border-orange-500 px-5">
+                                            <li><span class="font-semibold">Holidays:</span> Please check our website or call us for holiday schedules.</li>
+                                            <li><span class="font-semibold">Exhibition Opening Nights:</span> Extended hours until 10:00 PM.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="space-y-6">
+                                        <h3 class="font-semibold mb-3">Last Admission</h3>
+                                        <ul class="border-l-4 border-orange-500 px-5">
+                                            <li>Visitors are allowed entry up to 30 minutes before closing.</li>
+                                        </ul>
+                                    </div>
+                                </div>
                             </div>
                         </div>
-
                         <!-- Accordion item -->
-                        <div class="border">
-                            <button>Opening Hours</button>
-                        </div>
-                        <!-- Accordion item -->
-                        <div class="border">
-                            <button>Tickets</button>
-                        </div>
+                        <div class="border bg-white border-black shadow-md transition-transform duration-300 hover:shadow-xl hover:scale-105 w-full">
+                            <button  class="w-full text-left text-xl px-6 py-2 flex justify-between items-center hover:text-black hover:font-bold"
+                            onclick="toggleAccordion('tickets', this)"><span>Tickets</span>
+                            <span class="accordion-icon text-orange-500">+</span>
+                        </button>
+                            <div id="tickets" class="py-4 px-6 hidden accordion-content">
+                                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                    <div class="spac-y-6">
+                                        <h3 class="font-semibold mb-3">Ticket Prices</h3>
+                                        <ul class="border-l-4 border-orange-500 px-5">
+                                            <li><span class="font-semibold">General Admission:</span> $15</li>
+                                            <li><span class="font-semibold">Students and Seniors (65+):</span> $10 (ID required)</li>
+                                            <li><span class="font-semibold">Children under 12: </span>Free</li>
+                                            <li><span class="font-semibold">Group Discount (10+):</span> $12 per person</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="spac-y-6">
+                                        <h3 class="font-semibold mb-3">How to Purchase</h3>
+                                        <ul class="border-l-4 border-orange-500 px-5">
+                                            <li><span class="font-semibold">Online: </span>Book your tickets in advance for a seamless experience. <a href="#" class="text-orange-500 hover:font-semibold">Buy Tickets</a></li>
+                                            <li><span class="font-semibold">On-site:</span> Tickets are available at the gallery reception.</li>
+                                        </ul>
+                                    </div>
 
-                        <!-- <nav
-                    aria-label="Secondary navigation for Plan Your Visit"
-                    class="w-full border-b py-2">
-                    <ul
-                        class="flex space-x-6 text-gray-500 text-2xl">
-                        <li
-                            class="">
-                            <a href="#access">Access</a>
-                        </li>
-                        <li
-                            class="hover:text-black hover:font-bold">
-                            <a href="#opening-hours">
-                                
-                            </a>
-                        </li>
-                        <li
-                            class="hover:text-black hover:font-bold">
-                            <a href="#ticktes"></a>
-                        </li>
-                    </ul>
-                </nav> -->
-                        <div id="opening-hours" class="py-6">
-                            Info Opening Hours
+                                    <div class="spac-y-6">
+                                        <h3 class="font-semibold mb-3">Special Offers</h3>
+                                        <ul class="border-l-4 border-orange-500 px-5">
+                                            <li><span class="font-semibold">Memberships:</span> Become a gallery member and enjoy unlimited visits, exclusive previews, and discounts.</li>
+                                            <li><span class="font-semibold">Free Days:</span> The first Sunday of each month offers free entry to all visitors.</li>
+                                        </ul>
+                                    </div>
+                                    <div class="spac-y-6">
+                                        <h3 class="font-semibold mb-3">Additional Information</h3>
+                                        <ul class="border-l-4 border-orange-500 px-5">
+                                            <li>Tickets are non-refundable but may be rescheduled up to 48 hours before your visit.</li>
+                                            <li>For private tours or school visits, contact us at <a href="mailto:tickets@vividvisions.com" class="text-orange-500 hover:font-semibold">tickets@vividvisions.com</a>.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div id="tickets" class="py-6">Info Tickets</div>
                     </div>
             <!-- End of Plan Your Visit section -->
 
@@ -277,5 +335,39 @@
                 </div>
             </div>
         </footer>
+        <script>
+            function toggleAccordion(id, button) {
+                const sections =
+                    document.querySelectorAll(".accordion-content");
+                const buttons = 
+                    document.querySelectorAll("button");
+                const icons = 
+                    document.querySelectorAll(".accordion-icon");
+
+                sections.forEach((section) => {
+                    if (section.id !== id) {
+                        section.classList.add("hidden");
+                    }
+                });
+
+                buttons.forEach((btn) => {
+                btn.classList.remove("font-bold", "text-black");
+                });
+
+                icons.forEach((icon) => {
+                icon.textContent = "+";
+                });
+
+                const current = document.getElementById(id);
+                current.classList.toggle("hidden");
+
+                if (!current.classList.contains("hidden")) {
+                    button.classList.add("font-bold", "text-black");
+                    button.querySelector(".accordion-icon").textContent = "-";
+                } else {
+                button.querySelector(".accordion-icon").textContent = "+";
+                }
+            }
+        </script>
     </body>
 </html>
