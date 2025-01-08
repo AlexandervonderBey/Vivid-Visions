@@ -1,18 +1,121 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <title>Art Gallery - Vivid Visions</title>
         <script src="https://cdn.tailwindcss.com"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+        <script> // Add Tailwind configuration
+            tailwind.config = {
+                darkMode: 'class',
+                theme: {
+                    extend: {
+                        colors: {
+                            primary: '#6C2BD9',
+                        }
+                    }
+                }
+            }
+        </script>
     </head>
-    <body>
-        <header></header>
-
+    <body class="bg-white dark:bg-gray-900 transition-colors duration-300">
+        <header class="fixed w-full transition-all duration-300 z-50" id="header">
+            <nav class="container mx-auto px-6 py-3">
+                <div class="flex items-center justify-between">
+                    <div class="flex items-center">
+                        <svg class="h-12 w-auto text-primary dark:text-white" viewBox="0 0 100 60">
+                            <text x="0" y="40" font-family="Arial" font-weight="bold" font-size="40" fill="currentColor">VV</text>
+                            <circle cx="85" cy="30" r="12" fill="currentColor" opacity="0.7"/>
+                        </svg>
+                    </div>
+    
+                    <!-- Desktop Navigation -->
+                    <div class="hidden md:flex items-center space-x-8">
+                        <a href="#hero" class="text-black dark:text-white hover:text-primary transition-colors font-semibold text-lg">Home</a>
+                        <a href="#whatsOn" class="text-black dark:text-white hover:text-primary transition-colors font-semibold text-lg">What's On</a>
+                        <a href="#planVisit" class="text-black dark:text-white hover:text-primary transition-colors font-semibold text-lg">Plan Your Visit</a>
+                        <a href="#contact" class="text-black dark:text-white hover:text-primary transition-colors font-semibold text-lg">Contact</a>
+                    </div>
+    
+                    <!-- Right side icons -->
+                    <div class="flex items-center space-x-6">
+                        <div class="relative">
+                            <button id="searchBtn" class="text-black dark:text-white hover:text-primary text-lg">
+                                <i class="fas fa-search"></i>
+                            </button>
+                            <div id="searchBar" class="hidden absolute right-0 top-12 w-64">
+                                <input type="text" class="w-full p-2 border rounded-md shadow-lg dark:bg-gray-800 dark:text-white" placeholder="Search...">
+                            </div>
+                        </div>
+                        <button id="loginBtn" class="text-black dark:text-white hover:text-primary text-lg">
+                            <i class="fas fa-user"></i>
+                        </button>
+                        <button id="darkModeBtn" class="text-black dark:text-white hover:text-primary w-[20px] flex justify-center text-lg">
+                            <i class="fas fa-moon dark:hidden"></i>
+                            <i class="fas fa-sun hidden dark:block"></i>
+                        </button>
+                        <!-- Mobile menu button -->
+                        <button id="mobileMenuBtn" class="md:hidden text-black dark:text-white hover:text-primary text-lg">
+                            <i class="fas fa-bars"></i>
+                        </button>
+                    </div>
+                </div>
+    
+                <!-- Mobile Navigation -->
+                <div id="mobileMenu" class="hidden md:hidden mt-4 pb-4 backdrop-blur-sm rounded-lg px-4">
+                    <div class="flex flex-col space-y-4">
+                        <a href="#hero" class="text-black dark:text-white hover:text-primary transition-colors font-semibold text-lg">Home</a>
+                        <a href="#whatsOn" class="text-black dark:text-white hover:text-primary transition-colors font-semibold text-lg">What's On</a>
+                        <a href="#planVisit" class="text-black dark:text-white hover:text-primary transition-colors font-semibold text-lg">Plan Your Visit</a>
+                        <a href="#contact" class="text-black dark:text-white hover:text-primary transition-colors font-semibold text-lg">Contact</a>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <main class="pt-[72px]"> <!-- Add padding-top equal to header height -->
+            <section class="hero h-[50vh] relative overflow-hidden" id="hero">
+                <!-- Slideshow background -->
+                <div id="slideshow" class="absolute inset-0 w-full h-full transition-opacity duration-700"></div>
+                
+                <!-- Gradient overlay -->
+                <div class="absolute inset-0 bg-gradient-to-r from-black/70 to-transparent"></div>
+                
+                <!-- Slide Navigation Buttons -->
+                <button id="prevSlide" class="absolute left-6 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors text-5xl z-20 p-4">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button id="nextSlide" class="absolute right-6 top-1/2 -translate-y-1/2 text-white hover:text-primary transition-colors text-5xl z-20 p-4">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+                
+                <!-- Content container -->
+                <div class="relative h-full flex items-center z-10">
+                    <div class="container mx-auto pl-12">
+                        <div class="max-w-xl text-white">
+                            <div id="slideInfo" class="space-y-4">
+                                <div>
+                                    <h2 class="text-5xl font-bold mb-2"></h2>
+                                    <p class="text-lg text-white/90 font-medium italic"></p>
+                                </div>
+                                <p class="text-xl opacity-90"></p>
+                                <a href="#" class="inline-block bg-primary hover:bg-white hover:text-primary text-white text-xl px-12 py-4 rounded-full transition-all duration-300 transform hover:scale-105 hover:shadow-lg mt-4">
+                                    Get Tickets
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Slide Indicators -->
+                <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20">
+                    <div id="slideIndicators" class="flex space-x-3"></div>
+                </div>
+            </section>
     <main>
         <!-- Start of What's On section -->
         <!-- Section container / flex box -->
-        <section class="container mx-auto flex flex-col gap-12 py-12 border-b">
+        <section class="container mx-auto flex flex-col gap-12 py-12 border-b" id="whatsOn">
             
             <!-- First flex row -->
             <div class="flex flex-col lg:flex-row items-center lg:items-start">
@@ -303,7 +406,7 @@
         </section>
     </main>
 
-        <footer
+        <footer id="contact"
             class="bg-black text-white flex justify-between items-center pt-6 pb-12 pr-18 pl-7">
             <div class="vivid-visions">
                 <p class="text-white font-bold text-lg">
@@ -376,5 +479,6 @@
                 }
             }
         </script>
+        <script src="main.js"></script>
     </body>
 </html>
